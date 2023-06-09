@@ -24,7 +24,7 @@ function App() {
       <div
         ref={backEl}
         id="dish-finder-overlay"
-        className="fixed top-0 left-0 w-screen h-screen z-[9999] hidden"
+        className="fixed top-0 left-0 w-screen bg-gray-100 opacity-50 h-screen z-[9999] hidden"
         onClick={handleClose}
       ></div>
       <div
