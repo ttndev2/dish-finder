@@ -30,7 +30,7 @@ function App() {
       <div
         id="dish-finder-menu"
         ref={menuEl}
-        className="w-[410px] h-[686px] fixed top-[10px] right-[10px] z-[9999] bg-[#0D1119] translate-x-[600px] transition-transform duration-200"
+        className="w-[410px] h-[686px] fixed top-[10px] right-[10px] z-[9999] bg-[#0D1119] translate-x-[600px] transition-transform duration-200 rounded-[10px]"
       >
         <DishMenu />
       </div>

@@ -47,7 +47,7 @@ export default function DishMenu() {
 
   return (
     <div className="bg-[#0D1119] p-[24px] space-y-[24px]">
-      <div ref={searchBoxRef} className="bg-[#131823] rounded relative">
+      <div ref={searchBoxRef} className="bg-[#131823] rounded-[10px] relative">
         <div className="h-[40px] relative">
           <IconSearch className="absolute top-[12px] left-[12px]" />
           <input

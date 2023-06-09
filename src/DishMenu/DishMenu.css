@@ -40,5 +40,9 @@
 }
 
 .dish-view-recipe {
-  @apply w-full h-[40px] flex justify-center items-center bg-[#1D2A43] text-[#fff] text-sm font-[500] rounded hover:opacity-80 active:opacity-90;
+  @apply w-full h-[40px] flex justify-center items-center bg-[#1D2A43] text-[#fff] text-sm font-[500] rounded hover:opacity-80 active:opacity-90 no-underline;
+}
+
+.dish-view-recipe:visited {
+  @apply text-[#fff] no-underline;
 }
