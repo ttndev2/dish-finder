@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Dish Finder",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting", "activeTab"],
+  "action": {
+    "default_icon": {
+      "16": "assets/icon.png",
+      "48": "assets/icon.png",
+      "128": "assets/icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["*"],
+      "extension_ids": [],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "icons": {
+    "16": "assets/icon.png",
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  }
+}

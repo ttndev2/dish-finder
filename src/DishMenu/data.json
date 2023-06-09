@@ -1,0 +1,284 @@
+[
+  {
+    "id": "paella",
+    "title": "Spanish Paella",
+    "country": "spanish",
+    "flag": "https://raw.githubusercontent.com/ttndev2/assets/main/spain.png",
+    "image": "https://raw.githubusercontent.com/ttndev2/assets/main/paella.png",
+    "level": "medium",
+    "recipeUrl": "https://tastesbetterfromscratch.com/paella/",
+    "description": "Spanish paella is a traditional rice dish that originated in the Valencia region of Spain. It was originally made with ingredients such as saffron, rabbit, and snails, which were common in the area.",
+    "socialLinks": {
+      "twitter": "https://twitter.com/share?text=Check+out+this+awesome+Spanish+Paella+recipe&url=https://dish-finder.vercel.app/paella",
+      "telegram": "https://t.me/share/url?url=https://dish-finder.vercel.app/paella&text=Check+out+this+awesome+Spanish+Paella+recipe",
+      "medium": "https://medium.com/new-story?title=Check+out+this+awesome+Spanish+Paella+recipe&content=https://dish-finder.vercel.app/paella",
+      "language": "https://translate.google.com/?text=Check+out+this+awesome+Spanish+Paella+recipe&url=https://dish-finder.vercel.app/paella"
+    },
+    "ingredients": [
+      {
+        "category": "Seafood",
+        "materials": [
+          {
+            "color": "white",
+            "name": "Jumbo Shrimp"
+          }
+        ]
+      },
+      {
+        "category": "Produce",
+        "materials": [
+          {
+            "color": "green",
+            "name": "Onion"
+          },
+          {
+            "color": "red",
+            "name": "Tomatoes"
+          }
+        ]
+      },
+      {
+        "category": "Spices",
+        "materials": [
+          {
+            "color": "green",
+            "name": "Bay Leaf"
+          },
+          {
+            "color": "orange",
+            "name": "Saffron"
+          }
+        ]
+      },
+      {
+        "category": "Olive Oil",
+        "materials": [
+          {
+            "color": "orange",
+            "name": "Spanish Olive Oil"
+          }
+        ]
+      },
+      {
+        "category": "Volume/Weight",
+        "materials": [
+          {
+            "color": "white",
+            "name": "700g"
+          }
+        ]
+      },
+      {
+        "category": "Serves",
+        "materials": [
+          {
+            "color": "white",
+            "name": "700g"
+          }
+        ]
+      },
+      {
+        "category": "Authenticity",
+        "materials": [
+          {
+            "color": "orange",
+            "name": "Unverified"
+          }
+        ]
+      },
+      {
+        "category": "Stock",
+        "materials": [
+          {
+            "color": "orange",
+            "name": "Chicken"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pasta",
+    "title": "Pasta Carbonara",
+    "country": "italian",
+    "flag": "https://raw.githubusercontent.com/ttndev2/assets/main/italy.png",
+    "image": "https://raw.githubusercontent.com/ttndev2/assets/main/pasta.png",
+    "level": "easy",
+    "recipeUrl": "https://www.cookingclassy.com/pasta-carbonara/",
+    "description": "Pasta Carbonara is a traditional Italian dish made with eggs, cheese, pancetta, and pepper. The dish originates from Rome and is named after the 'carbonari' (charcoal workers) who were thought to have invented it.",
+    "socialLinks": {
+      "twitter": "https://twitter.com/share?text=Check+out+this+delicious+Pasta+Carbonara+recipe&url=https://dish-finder.vercel.app/carbonara",
+      "telegram": "https://t.me/share/url?url=https://dish-finder.vercel.app/carbonara&text=Check+out+this+delicious+Pasta+Carbonara+recipe",
+      "medium": "https://medium.com/new-story?title=Check+out+this+delicious+Pasta+Carbonara+recipe&content=https://dish-finder.vercel.app/carbonara",
+      "language": "https://translate.google.com/?text=Check+out+this+delicious+Pasta+Carbonara+recipe&url=https://dish-finder.vercel.app/carbonara"
+    },
+    "ingredients": [
+      {
+        "category": "Pasta",
+        "materials": [
+          {
+            "color": "white",
+            "name": "Spaghetti"
+          }
+        ]
+      },
+      {
+        "category": "Meat",
+        "materials": [
+          {
+            "color": "red",
+            "name": "Pancetta"
+          }
+        ]
+      },
+      {
+        "category": "Cheese",
+        "materials": [
+          {
+            "color": "green",
+            "name": "Parmesan"
+          }
+        ]
+      },
+      {
+        "category": "Eggs",
+        "materials": [
+          {
+            "color": "orange",
+            "name": "Eggs"
+          }
+        ]
+      },
+      {
+        "category": "Spices",
+        "materials": [
+          {
+            "color": "orange",
+            "name": "Black Pepper"
+          }
+        ]
+      },
+      {
+        "category": "Olive Oil",
+        "materials": [
+          {
+            "color": "green",
+            "name": "Italian Olive Oil"
+          }
+        ]
+      },
+      {
+        "category": "Volume/Weight",
+        "materials": [
+          {
+            "color": "white",
+            "name": "500g"
+          }
+        ]
+      },
+      {
+        "category": "Authenticity",
+        "materials": [
+          {
+            "color": "orange",
+            "name": "Verified"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "beef",
+    "title": "Beef Bourguignon",
+    "country": "french",
+    "flag": "https://raw.githubusercontent.com/ttndev2/assets/main/france.png",
+    "image": "https://raw.githubusercontent.com/ttndev2/assets/main/beef.png",
+    "level": "hard",
+    "recipeUrl": "https://cafedelites.com/beef-bourguignon/",
+    "description": "Beef Bourguignon is a French classic. The dish originates from the Burgundy region (in French, Bourgogne) which is in eastern France. It's a stew made of beef braised in red wine, often red Burgundy, and beef broth, generally flavored with carrots, onions, and garlic, and garnished with pearl onions, mushrooms, and bacon.",
+    "socialLinks": {
+      "twitter": "https://twitter.com/share?text=Try+this+classic+Beef+Bourguignon+recipe&url=https://dish-finder.vercel.app/bourguignon",
+      "telegram": "https://t.me/share/url?url=https://dish-finder.vercel.app/bourguignon&text=Try+this+classic+Beef+Bourguignon+recipe",
+      "medium": "https://medium.com/new-story?title=Try+this+classic+Beef+Bourguignon+recipe&content=https://dish-finder.vercel.app/bourguignon",
+      "language": "https://translate.google.com/?text=Try+this+classic+Beef+Bourguignon+recipe&url=https://dish-finder.vercel.app/bourguignon"
+    },
+    "ingredients": [
+      {
+        "category": "Meat",
+        "materials": [
+          {
+            "color": "red",
+            "name": "Beef"
+          }
+        ]
+      },
+      {
+        "category": "Produce",
+        "materials": [
+          {
+            "color": "orange",
+            "name": "Carrots"
+          },
+          {
+            "color": "white",
+            "name": "Garlic"
+          }
+        ]
+      },
+      {
+        "category": "Alcohol",
+        "materials": [
+          {
+            "color": "red",
+            "name": "Red Wine"
+          }
+        ]
+      },
+      {
+        "category": "Spices",
+        "materials": [
+          {
+            "color": "green",
+            "name": "Bay Leaf"
+          }
+        ]
+      },
+      {
+        "category": "Stock",
+        "materials": [
+          {
+            "color": "white",
+            "name": "Beef Stock"
+          }
+        ]
+      },
+      {
+        "category": "Dairy",
+        "materials": [
+          {
+            "color": "orange",
+            "name": "Butter"
+          }
+        ]
+      },
+      {
+        "category": "Volume/Weight",
+        "materials": [
+          {
+            "color": "white",
+            "name": "1kg"
+          }
+        ]
+      },
+      {
+        "category": "Authenticity",
+        "materials": [
+          {
+            "color": "green",
+            "name": "Verified"
+          }
+        ]
+      }
+    ]
+  }
+]
