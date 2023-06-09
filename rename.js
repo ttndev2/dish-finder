@@ -3,6 +3,17 @@ const path = require("path");
 
 const directory = path.join(__dirname, "build", "static", "js");
 
+const copyFile = async (source, target, directory) => {
+  fs.copyFile(
+    path.join(directory, source),
+    path.join(directory, target),
+    (err) => {
+      if (err) throw err;
+      console.log(`Copied ${source} to ${target}`);
+    }
+  );
+};
+
 fs.readdir(directory, (err, files) => {
   if (err) throw err;
 
@@ -16,32 +27,9 @@ fs.readdir(directory, (err, files) => {
       const newLicenseFilename = "main.js.LICENSE.txt";
       const newMapFilename = "main.js.map";
 
-      fs.rename(
-        path.join(directory, jsFilename),
-        path.join(directory, newJsFilename),
-        (err) => {
-          if (err) throw err;
-          console.log(`Renamed ${jsFilename} to ${newJsFilename}`);
-        }
-      );
-
-      fs.rename(
-        path.join(directory, licenseFilename),
-        path.join(directory, newLicenseFilename),
-        (err) => {
-          if (err) throw err;
-          console.log(`Renamed ${licenseFilename} to ${newLicenseFilename}`);
-        }
-      );
-
-      fs.rename(
-        path.join(directory, mapFilename),
-        path.join(directory, newMapFilename),
-        (err) => {
-          if (err) throw err;
-          console.log(`Renamed ${mapFilename} to ${newMapFilename}`);
-        }
-      );
+      copyFile(jsFilename, newJsFilename, directory);
+      copyFile(licenseFilename, newLicenseFilename, directory);
+      copyFile(mapFilename, newMapFilename, directory);
     }
   }
 });
@@ -62,23 +50,8 @@ fs.readdir(cssDirectory, (err, files) => {
       const newCssFilename = "main.css";
       const newMapFilename = "main.css.map";
 
-      fs.rename(
-        path.join(cssDirectory, cssFilename),
-        path.join(cssDirectory, newCssFilename),
-        (err) => {
-          if (err) throw err;
-          console.log(`Renamed ${cssFilename} to ${newCssFilename}`);
-        }
-      );
-
-      fs.rename(
-        path.join(cssDirectory, mapFilename),
-        path.join(cssDirectory, newMapFilename),
-        (err) => {
-          if (err) throw err;
-          console.log(`Renamed ${mapFilename} to ${newMapFilename}`);
-        }
-      );
+      copyFile(cssFilename, newCssFilename, cssDirectory);
+      copyFile(mapFilename, newMapFilename, cssDirectory);
     }
   }
 });
