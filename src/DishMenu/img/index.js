@@ -14,7 +14,7 @@ import FlagVietnam from "./vietnam.png";
 
 import Dish from "./dish.png";
 
-export default {
+const Image = {
   SVG: {
     Search: SvgSearch,
     Twitter: SvgTwitter,
@@ -37,3 +37,5 @@ export default {
     dish: Dish,
   },
 };
+
+export default Image;

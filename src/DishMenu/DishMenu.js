@@ -1,9 +1,12 @@
 import React from "react";
-import data from "./data.json";
+import axios from "axios";
+// import data from "./data.json";
 import DishSearch from "./DishSearch";
 import DishDetail from "./DishDetail";
 import DishAddForm from "./DishAddForm";
 import "./style.css";
+
+const API_URL = process.env.REACT_APP_API_URL;
 
 export default function DishMenu() {
   const [state, setState] = React.useState({
@@ -12,8 +15,24 @@ export default function DishMenu() {
     addFormVisible: false,
   });
 
+  // React.useEffect(() => {
+  //   setState({ ...state, dishes: data });
+  // }, [state]);
+
   React.useEffect(() => {
-    setState({ ...state, dishes: data });
+    async function fetchData() {
+      var config = {
+        method: "get",
+        url: `${API_URL}/recipes`,
+        headers: {},
+      };
+
+      try {
+        const response = await axios(config);
+        setState({ dish: null, addFormVisible: false, dishes: response.data });
+      } catch (e) {}
+    }
+    fetchData();
   }, []);
 
   function handleSelect(_dish) {
@@ -28,7 +47,27 @@ export default function DishMenu() {
     setState({ ...state, addFormVisible: false });
   }
 
-  function handleDishAdd() {}
+  async function handleAddDish(data) {
+    var config = {
+      method: "post",
+      url: `${API_URL}/recipes`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data,
+    };
+
+    const response = await axios(config);
+    if (response.status === 201) {
+      console.log(response.data);
+      setState({
+        ...state,
+        addFormVisible: false,
+        dish: response.data,
+        dishes: [...state.dishes, response.data],
+      });
+    }
+  }
 
   return (
     <div className="flex rounded-[10px] overflow-hidden relative min-h-[400px]">
@@ -39,7 +78,13 @@ export default function DishMenu() {
         )}
         {!state.dish && (
           <div className="text-white">
-            Welcome! Please select a dish from the menu.
+            Welcome! Please select a dish from the menu. <br />
+            <div className="mt-1">
+              You can also{" "}
+              <button className="text-blue-500" onClick={handleAddFormOpen}>
+                add new recipe.
+              </button>
+            </div>
           </div>
         )}
       </div>
@@ -53,7 +98,7 @@ export default function DishMenu() {
           left: state.addFormVisible ? "0" : "100%",
         }}
       >
-        <DishAddForm onClose={handleAddFormClose} onAdd={handleDishAdd} />
+        <DishAddForm onClose={handleAddFormClose} onAdd={handleAddDish} />
       </div>
     </div>
   );

@@ -13,13 +13,28 @@ export default function DishDetail({ dish, onClickAdd }) {
         />
         <div className="text-sm text-white px-[8px] flex-grow">{dish.name}</div>
         <div className="flex items-center gap-[4px]">
-          <a className="social-link" href="#">
+          <a
+            className="social-link"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image.SVG.Twitter />
           </a>
-          <a className="social-link" href="#">
+          <a
+            className="social-link"
+            href="https://t.me"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image.SVG.Telegram />
           </a>
-          <a className="social-link" href="#">
+          <a
+            className="social-link"
+            href="https://medium.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image.SVG.Medium />
           </a>
           <button className="dish-btn" onClick={onClickAdd}>
@@ -73,10 +88,14 @@ export default function DishDetail({ dish, onClickAdd }) {
         />
         <DishDetailSpec
           title="Volume/Weight"
-          content={dish.volume}
+          content={dish.volume + " grams"}
           color="white"
         />
-        <DishDetailSpec title="Serves" content={dish.serves} color="white" />
+        <DishDetailSpec
+          title="Serves"
+          content={dish.serves + " people"}
+          color="white"
+        />
         <DishDetailSpec
           title="Authenticity"
           content={dish.authenticity}

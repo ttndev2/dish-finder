@@ -2,14 +2,32 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function DishAddForm({ onClose, onAdd }) {
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     watch,
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    console.log(data);
+    setLoading(true);
+    try {
+      await onAdd(data);
+      reset();
+    } catch (e) {
+      if (e.name === "AxiosError") {
+        setErrorMessage(e.response.data.message);
+      } else {
+        setErrorMessage(e.message);
+      }
+    }
+    setLoading(false);
+  };
 
   return (
     <div className="bg-[#0D1119] p-[24px] rounded-[10px] w-[410px]">
@@ -36,6 +54,10 @@ export default function DishAddForm({ onClose, onAdd }) {
         </h2>
       </div>
       <hr className="mt-[16px] border-t border-[#2E3347]" />
+
+      {errorMessage && (
+        <div className="mt-[16px] text-red-500">{errorMessage}</div>
+      )}
 
       <div className="flex items-center mt-[24px]">
         <form
@@ -177,7 +199,14 @@ export default function DishAddForm({ onClose, onAdd }) {
               </label>
               <div className="relative">
                 <input
-                  {...register("volume", { required: true })}
+                  {...register("volume", {
+                    required: true,
+                    valueAsNumber: true,
+                    pattern: {
+                      value: /^[0-9]*$/,
+                    },
+                    validate: (value) => value > 0,
+                  })}
                   className="block w-full mt-[10px] text-white px-[11px] py-[8px] pr-[50px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
                 />
                 <span className="absolute flex items-center top-0 right-[11px] h-full">
@@ -188,7 +217,7 @@ export default function DishAddForm({ onClose, onAdd }) {
               </div>
               {errors.volume && (
                 <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Volume is required.
+                  Volume is invalid.
                 </p>
               )}
             </div>
@@ -201,7 +230,14 @@ export default function DishAddForm({ onClose, onAdd }) {
               </label>
               <div className="relative">
                 <input
-                  {...register("serves", { required: true })}
+                  {...register("serves", {
+                    required: true,
+                    valueAsNumber: true,
+                    pattern: {
+                      value: /^[0-9]*$/,
+                    },
+                    validate: (value) => value > 0,
+                  })}
                   className="block w-full mt-[10px] text-white px-[11px] py-[8px] pr-[60px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
                 />
                 <span className="absolute flex items-center top-0 right-[11px] h-full">
@@ -212,7 +248,7 @@ export default function DishAddForm({ onClose, onAdd }) {
               </div>
               {errors.serves && (
                 <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Serves is required.
+                  Serves is invalid.
                 </p>
               )}
             </div>
@@ -251,11 +287,17 @@ export default function DishAddForm({ onClose, onAdd }) {
           </div>
 
           <div>
-            <input
+            <button
               type="submit"
-              className="font-bai font-medium text-[16px] leading-[20px] mt-2 px-4 py-2 w-full h-[40px] bg-[#764AF4] hover:bg-[#5733C4] text-white rounded-[6px] cursor-pointer"
-              value="Add Recipe"
-            />
+              className="font-bai font-medium text-[16px] leading-[20px] mt-2 px-4 py-2 w-full h-[40px] bg-[#764AF4] hover:bg-[#5733C4] text-white rounded-[6px] cursor-pointer justify-center flex items-center"
+              disabled={loading}
+            >
+              {loading ? (
+                <div className="animate-spin w-4 h-4 border-t-2 border-white rounded-full" />
+              ) : (
+                "Add Recipe"
+              )}
+            </button>
           </div>
         </form>
       </div>

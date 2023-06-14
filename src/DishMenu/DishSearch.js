@@ -20,7 +20,7 @@ export default function DishSearch({ data, onChange }) {
           ...state,
           filtered: state.all,
           expanded: false,
-          text: state.dishName || "",
+          text: "",
         }));
       }
     }
@@ -37,12 +37,12 @@ export default function DishSearch({ data, onChange }) {
 
   function handleSelect(dishId) {
     const dish = state.all.find((d) => d.id === dishId);
-    if (dish.name !== state.dishName) {
+    if (1 || dish.name !== state.dishName) {
       setState({
         ...state,
         filtered: state.all,
         expanded: false,
-        text: dish.name,
+        text: "",
         dish,
         dishName: dish.name,
         prevDish: state.dish,
@@ -70,7 +70,7 @@ export default function DishSearch({ data, onChange }) {
       <div className="h-[40px] relative bg-[#131823] rounded">
         <Image.SVG.Search className="absolute top-[12px] left-[12px]" />
         <input
-          className="bg-transparent w-full h-full pl-[40px] text-white outline-none"
+          className="bg-transparent w-full h-full pl-[40px] text-white outline-none border-none ring-0 focus:ring-0 shadow-[0_0_0_1px_#5B6178] rounded-[6px] focus:shadow-[0_0_0_4px_#B89FFF,inset_0_0_0_1px_#663CDD]"
           placeholder="Search cousine"
           type="text"
           value={state.text}
