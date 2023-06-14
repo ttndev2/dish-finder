@@ -173,7 +173,7 @@ export default function DishAddForm({ onClose, onAdd }) {
                 />
                 <span className="absolute flex items-center top-0 right-[11px] h-full">
                   <span className="font-bai text-[#E9EAF6] text-[14px] leading-[14px]">
-                    gram
+                    grams
                   </span>
                 </span>
               </div>
