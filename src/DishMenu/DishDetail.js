@@ -53,7 +53,11 @@ export default function DishDetail({ dish, onClickAdd }) {
               dish.difficulty === "Hard" ? "text-white" : "text-[#0D1119]"
             }`}
           >
-            <img className="w-[32px] h-[32px]" src={Image.other.dish} alt="" />
+            <img
+              className="w-[32px] h-[32px]"
+              src="https://raw.githubusercontent.com/ttndev2/assets/main/paella.png"
+              alt=""
+            />
             <div className="font-[700]">Difficulty: {dish.difficulty}</div>
           </div>
           <div
