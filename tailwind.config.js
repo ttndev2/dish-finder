@@ -5,9 +5,10 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Helvetica Neue", "sans-serif"],
+        bai: ["Bai Jamjuree", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
