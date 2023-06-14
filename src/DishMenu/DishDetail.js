@@ -28,12 +28,26 @@ export default function DishDetail({ dish, onClickAdd }) {
         </div>
       </div>
       <div className="bg-[#131823] rounded p-[10px]">
-        <div className="bg-[#17CFC4] rounded px-[20px] py-[10px] space-y-[16px] min-h-[188px]">
-          <div className="flex items-center gap-[10px]">
+        <div
+          className={`${
+            dish.difficulty === "Hard" ? "bg-[#41479B]" : "bg-[#17CFC4]"
+          }  rounded px-[20px] py-[10px] space-y-[16px] min-h-[188px]`}
+        >
+          <div
+            className={`flex items-center gap-[10px] ${
+              dish.difficulty === "Hard" ? "text-white" : "text-[#0D1119]"
+            }`}
+          >
             <img className="w-[32px] h-[32px]" src={Image.other.dish} alt="" />
             <div className="font-[700]">Difficulty: {dish.difficulty}</div>
           </div>
-          <div className="text-[#0D1119] font-[400]">{dish.description} </div>
+          <div
+            className={`${
+              dish.difficulty === "Hard" ? "text-white" : "text-[#0D1119]"
+            } font-[400]`}
+          >
+            {dish.description}
+          </div>
           {/* <a
             className="dish-view-recipe"
             href={dish.recipeUrl}
