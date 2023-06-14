@@ -169,7 +169,7 @@ export default function DishAddForm({ onClose, onAdd }) {
                     },
                     validate: (value) => value > 0,
                   })}
-                  className="dish-textfield pr-[50px]"
+                  className="dish-textfield !pr-[54px]"
                 />
                 <span className="absolute flex items-center top-0 right-[11px] h-full">
                   <span className="font-bai text-[#E9EAF6] text-[14px] leading-[14px]">
@@ -196,7 +196,7 @@ export default function DishAddForm({ onClose, onAdd }) {
                     },
                     validate: (value) => value > 0,
                   })}
-                  className="dish-textfield pr-[60px]"
+                  className="dish-textfield !pr-[60px]"
                 />
                 <span className="absolute flex items-center top-0 right-[11px] h-full">
                   <span className="font-bai text-[#E9EAF6] text-[14px] leading-[14px]">
