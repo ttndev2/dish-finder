@@ -1,0 +1,22 @@
+.dish-label {
+  @apply font-bai font-medium text-[16px] leading-[20px];
+}
+.dish-textfield {
+  @apply block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px];
+}
+
+.dish-textarea {
+  @apply block w-full mt-[10px] text-white px-[11px] py-[8px] h-[80px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px] border-none ring-0 focus:ring-0;
+}
+
+.dish-select {
+  @apply block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none border-none ring-0 focus:ring-0 shadow-[0_0_0_1px_#5B6178] rounded-[6px];
+}
+
+.dish-error {
+  @apply font-bai text-red-500 text-[12px] absolute mt-[2px];
+}
+
+.dish-button {
+  @apply font-bai font-medium text-[16px] leading-[20px] mt-2 px-4 py-2 w-full h-[40px] bg-[#764AF4] hover:bg-[#5733C4] text-white rounded-[6px] cursor-pointer justify-center flex items-center;
+}

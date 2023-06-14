@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import "./DishAddForm.css";
 
 export default function DishAddForm({ onClose, onAdd }) {
   const [loading, setLoading] = useState(false);
@@ -66,27 +67,16 @@ export default function DishAddForm({ onClose, onAdd }) {
         >
           <div className="flex space-x-[12px]">
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Name
-              </label>
+              <label className="dish-label">Name</label>
               <input
                 {...register("name", { required: true })}
-                className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                className="dish-textfield"
               />
-              {errors.name && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Name is required.
-                </p>
-              )}
+              {errors.name && <p className="dish-error">Name is required.</p>}
             </div>
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Origin
-              </label>
-              <select
-                {...register("origin")}
-                className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none border-none ring-0 focus:ring-0 shadow-[0_0_0_1px_#5B6178] rounded-[6px] "
-              >
+              <label className="dish-label">Origin</label>
+              <select {...register("origin")} className="dish-select ">
                 <option value="thailand">Thailand</option>
                 <option value="india">India</option>
                 <option value="vietnam">Vietnam</option>
@@ -95,108 +85,80 @@ export default function DishAddForm({ onClose, onAdd }) {
           </div>
 
           <div className="w-full">
-            <label className="font-bai font-medium text-[16px] leading-[20px]">
-              Description
-            </label>
+            <label className="dish-label">Description</label>
             <textarea
               {...register("description", { required: true, maxLength: 200 })}
-              className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[80px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px] border-none ring-0 focus:ring-0"
+              className="dish-textarea"
             />
             <p className="text-[14px] mt-[6px] text-[#43495E]">
               {`${watch("description")?.length || 0}/200 Characters`}
             </p>
             {errors.description && (
-              <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                Description is required.
-              </p>
+              <p className="dish-error">Description is required.</p>
             )}
           </div>
 
           <div className="flex space-x-[12px]">
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Difficulty
-              </label>
+              <label className="dish-label">Difficulty</label>
               <select
                 {...register("difficulty", { required: true })}
-                className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none border-none ring-0 focus:ring-0 shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                className="dish-select"
               >
                 <option value="Easy">Easy</option>
                 <option value="Medium">Medium</option>
                 <option value="Hard">Hard</option>
               </select>
               {errors.difficulty && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Difficulty is required.
-                </p>
+                <p className="dish-error">Difficulty is required.</p>
               )}
             </div>
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Protein
-              </label>
+              <label className="dish-label">Protein</label>
               <input
                 {...register("protein", { required: true })}
-                className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                className="dish-textfield"
               />
               {errors.protein && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Protein is required.
-                </p>
+                <p className="dish-error">Protein is required.</p>
               )}
             </div>
           </div>
 
           <div className="flex space-x-[12px]">
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Produce
-              </label>
+              <label className="dish-label">Produce</label>
               <input
                 {...register("produce", { required: true })}
-                className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                className="dish-textfield"
               />
               {errors.produce && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Produce is required.
-                </p>
+                <p className="dish-error">Produce is required.</p>
               )}
             </div>
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Spice
-              </label>
+              <label className="dish-label">Spice</label>
               <input
                 {...register("spice", { required: true })}
-                className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                className="dish-textfield"
               />
-              {errors.spice && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Spice is required.
-                </p>
-              )}
+              {errors.spice && <p className="dish-error">Spice is required.</p>}
             </div>
           </div>
 
           <div className="flex space-x-[12px]">
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Cooking Oil?
-              </label>
+              <label className="dish-label">Cooking Oil?</label>
               <input
                 {...register("cookingOil", { required: true })}
-                className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                className="dish-textfield"
               />
               {errors.cookingOil && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Cooking Oil is required.
-                </p>
+                <p className="dish-error">Cooking Oil is required.</p>
               )}
             </div>
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Volume
-              </label>
+              <label className="dish-label">Volume</label>
               <div className="relative">
                 <input
                   {...register("volume", {
@@ -207,7 +169,7 @@ export default function DishAddForm({ onClose, onAdd }) {
                     },
                     validate: (value) => value > 0,
                   })}
-                  className="block w-full mt-[10px] text-white px-[11px] py-[8px] pr-[50px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                  className="dish-textfield pr-[50px]"
                 />
                 <span className="absolute flex items-center top-0 right-[11px] h-full">
                   <span className="font-bai text-[#E9EAF6] text-[14px] leading-[14px]">
@@ -216,18 +178,14 @@ export default function DishAddForm({ onClose, onAdd }) {
                 </span>
               </div>
               {errors.volume && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Volume is invalid.
-                </p>
+                <p className="dish-error">Volume is invalid.</p>
               )}
             </div>
           </div>
 
           <div className="flex space-x-[12px]">
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Serves
-              </label>
+              <label className="dish-label">Serves</label>
               <div className="relative">
                 <input
                   {...register("serves", {
@@ -238,7 +196,7 @@ export default function DishAddForm({ onClose, onAdd }) {
                     },
                     validate: (value) => value > 0,
                   })}
-                  className="block w-full mt-[10px] text-white px-[11px] py-[8px] pr-[60px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                  className="dish-textfield pr-[60px]"
                 />
                 <span className="absolute flex items-center top-0 right-[11px] h-full">
                   <span className="font-bai text-[#E9EAF6] text-[14px] leading-[14px]">
@@ -247,51 +205,35 @@ export default function DishAddForm({ onClose, onAdd }) {
                 </span>
               </div>
               {errors.serves && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Serves is invalid.
-                </p>
+                <p className="dish-error">Serves is invalid.</p>
               )}
             </div>
             <div className="w-[50%]">
-              <label className="font-bai font-medium text-[16px] leading-[20px]">
-                Authenticity
-              </label>
+              <label className="dish-label">Authenticity</label>
               <select
                 {...register("authenticity", { required: true })}
-                className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none border-none ring-0 focus:ring-0 shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+                className="dish-select"
               >
                 <option value="Unverified">Unverified</option>
                 <option value="Verified">Verified</option>
               </select>
               {errors.authenticity && (
-                <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                  Authenticity is required.
-                </p>
+                <p className="dish-error">Authenticity is required.</p>
               )}
             </div>
           </div>
 
           <div className="w-full">
-            <label className="font-bai font-medium text-[16px] leading-[20px]">
-              Stock
-            </label>
+            <label className="dish-label">Stock</label>
             <input
               {...register("stock", { required: true })}
-              className="block w-full mt-[10px] text-white px-[11px] py-[8px] h-[40px] bg-[#181F30] outline-none shadow-[0_0_0_1px_#5B6178] rounded-[6px]"
+              className="dish-textfield"
             />
-            {errors.stock && (
-              <p className="font-bai text-red-500 text-[12px] absolute mt-[2px]">
-                Stock is required.
-              </p>
-            )}
+            {errors.stock && <p className="dish-error">Stock is required.</p>}
           </div>
 
           <div>
-            <button
-              type="submit"
-              className="font-bai font-medium text-[16px] leading-[20px] mt-2 px-4 py-2 w-full h-[40px] bg-[#764AF4] hover:bg-[#5733C4] text-white rounded-[6px] cursor-pointer justify-center flex items-center"
-              disabled={loading}
-            >
+            <button type="submit" className="dish-button" disabled={loading}>
               {loading ? (
                 <div className="animate-spin w-4 h-4 border-t-2 border-white rounded-full" />
               ) : (
